@@ -58,7 +58,9 @@ int PublishSelectedPatch::processMouseEvent( rviz::ViewportMouseEvent& event )
       sel_start_y_ = event.y;
     }
   }
-
+  
+  // We use get3DPoint( event.viewport, temp_x, temp_y, pos ) to replace the getSelection()
+  // and pcl::PointCloud to construct the point cloud.
   if( selecting_ )
   {
     if( event.leftUp() )
